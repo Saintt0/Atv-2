@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funcionario</title>
+</head>
+<body>
+
+    <form th:action="@{/cadastrar}" method="POST">
+        <input type="text" name="nome"/>
+        <input type="text" name="cargo"/>
+        <input type="text" name="salario"/>
+        <input type="text" name="cargahoraria"/>
+        <input type="submit" value="Cadastrar"/>
+    </form>
+    <table>
+        <tr th:each="funcionarios : ${funcionarios}">
+            <td th:text="${funcionarios.idfunc}"></td>
+            <td th:text="${funcionarios.nome}"></td>
+            <td th:text="${funcionarios.cargo}"></td>
+            <td th:text="${funcionarios.salario}"></td>
+            <td th:text="${funcionarios.cargahoraria}"></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
